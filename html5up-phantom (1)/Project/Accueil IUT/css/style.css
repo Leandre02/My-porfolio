@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "digital";
+    src: url("../fonts/PatrickHand-Regular.ttf");
+  }
+  @font-face {
+    font-family: "Italic";
+    src: url("../fonts/PTSans-Italic.ttf");
+  }
+  
+  body {

@@ -1,0 +1,114 @@
+<HTML>
+<HEAD>
+<script>
+x=new Array(40)
+y=new Array(40)
+n=5
+d=4
+p=0
+g=0
+v=50
+xp=rnd(20)*10
+yp=rnd(20)*10
+for (i=1;i<n;i++){
+x[i]=x[i-1]
+x[i]=i*10
+y[i]=10
+}
+function de(){
+for (i=n;i>1;i--){
+x[i]=x[i-1]
+y[i]=y[i-1]
+eval("document.all.Tip"+i+".style.left='"+x[i]+"'")
+eval("document.all.Tip"+i+".style.top='"+y[i]+"'")
+eval("document.all.Tip"+i+".style.display=''")
+if (x[i]==xp){
+if (y[i]==yp){
+g=g+3
+xp=rnd(20)*10
+yp=rnd(20)*10}
+}}
+if (g>0){g--;n++;p++;v--}
+if (n>40){n=40}
+if (d==6){
+x[1]=x[1]-10
+}
+if (d==4){
+x[1]=x[1]+10
+}
+if (d==8){
+y[1]=y[1]-10
+}
+if (d==2){
+y[1]=y[1]+10
+}
+eval("document.all.pomme.style.left='"+xp+"'")
+eval("document.all.pomme.style.top='"+yp+"'")
+document.point.point.value=p
+if (x[1]>200){x[1]=0}
+if (x[1]<0){x[1]=200}
+if (y[1]>200){y[1]=0}
+if (y[1]<0){y[1]=200}
+setTimeout( "de()" ,v )
+}
+function rnd(n){
+var temp = Math.random();
+if (temp==1) temp=0.9;
+return Math.floor(temp * n);}
+</script>
+</HEAD>
+<BODY onload="de()" bgcolor="#ffffff" alink="#000000" vlink="#000000">
+<div style="position:absolute;left:0;top:0"><table border=1 width="210" height="210"><td width="210" height="210" background="back.jpg"><tr></td></tr></table></div>
+<div style="position:absolute;left:250;top:20"><a href="#"
+onmouseover="d=6"><img src="left.png" border="0"></a></div>
+<div style="position:absolute;left:280;top:20"><a href="#"
+onmouseover="d=4"><img src="right.png" border="0"></a></div>
+<div style="position:absolute;left:265;top:0"><a href="#"
+onmouseover="d=8"><img src="up.png" border="0"></a></div>
+<div style="position:absolute;left:265;top:40"><a href="#"
+onmouseover="d=2"><img src="down.png" border="0"></a></div>
+<div style="position:absolute;left:260;top:200"><form name="point"><input type="text" name="point" size="4"></form></div>
+<div ID="Tip0"style="display:none;position:absolute"><img src="2.jpg"></div>
+<div ID="Tip1"style="display:none;position:absolute"><img src="2.jpg"></div>
+<div ID="Tip2"style="display:none;position:absolute"><img src="2.jpg"></div>
+<div ID="Tip3"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip4"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip5"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip6"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip7"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip8"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip9"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip10"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip11"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip12"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip13"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip14"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip15"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip16"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip17"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip18"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip19"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip20"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip21"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip22"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip23"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip24"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip25"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip26"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip27"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip28"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip29"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip30"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip31"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip32"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip33"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip34"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip35"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip36"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip37"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip38"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip39"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="Tip40"style="display:none;position:absolute"><img src="1.jpg"></div>
+<div ID="pomme"style="position:absolute"><img src="pomme.jpg"></div>
+</BODY>
+</HTML>

@@ -1,0 +1,885 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Démineur</title>
+<p>By Leandre Kanmegne</p>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="javascript">
+//<!--
+/*© Leandre Kanmegne- 2016*/
+var nbbombes=0;
+var nbombesutil=0;
+var casesutil=0;
+var jeu=new Array;
+function trouvligne(casecherche) {
+var ligne;
+if(casecherche<0) ligne=-1;
+else
+{
+    for(var i=0;i!=9;i++) {
+        for(var j=0;j!=9;j++) {
+            if((i*9+j)==casecherche) ligne=i;
+        }
+    }
+}
+return ligne;
+}
+function memeligne(i,j) {
+var lignecase1=trouvligne(i);
+var case2=i+j;
+var lignecase2=trouvligne(case2);
+if(lignecase1==lignecase2) return 1;
+else return 0;
+}
+function nbombes(casecherche) {
+var nbombes2=0;
+for(var i=-1;i!=2;i++) {
+for(var j=-1;j!=2;j++) {
+if((i!=0||j!=0)&&jeu[casecherche+i*9+j]=="#"&&memeligne(i*9+casecherche,j)==1) nbombes2++;
+}
+}
+return nbombes2;
+}
+function debut() {
+for(var w=0;w!=81;++w) jeu[w]="";
+var bombes=new Array();
+nbombesutil=document.demineur.selection.value;
+if(nbombesutil>75||nbombesutil<1) nbombesutil=10;
+//Reflechit au placement des bombes les bombes
+for(var i=0;bombes.length!=nbombesutil;i++) {
+bombes[i]=Math.round(Math.random()*80);
+for(var j=0;j!=bombes.length;j++) if(j!=i&&bombes[i]==bombes[j]) i--;
+}
+//Place les bombes
+for(var i=0;i!=nbombesutil;i++)  jeu[bombes[i]]="#";
+nbbombes=bombes.length;
+//Affichage du nombre de bombes
+document.demineur.totalbombes.value=nbbombes;
+//Affichage des nombres
+for(var k=0;k!=81;++k) if(jeu[k]!="#") jeu[k]=nbombes(k);
+}
+function affichechoix(casejoue) {
+
+if(casejoue==0) {
+document.demineur.case0.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case0.id="id"+jeu[casejoue];
+}
+
+if(casejoue==1) {
+document.demineur.case1.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case1.id="id"+jeu[casejoue];
+}
+
+if(casejoue==2) {
+document.demineur.case2.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case2.id="id"+jeu[casejoue];
+}
+
+if(casejoue==3) {
+document.demineur.case3.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case3.id="id"+jeu[casejoue];
+}
+
+if(casejoue==4) {
+document.demineur.case4.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case4.id="id"+jeu[casejoue];
+}
+
+if(casejoue==5) {
+document.demineur.case5.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case5.id="id"+jeu[casejoue];
+}
+
+if(casejoue==6) {
+document.demineur.case6.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case6.id="id"+jeu[casejoue];
+}
+
+if(casejoue==7) {
+document.demineur.case7.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case7.id="id"+jeu[casejoue];
+}
+
+if(casejoue==8) {
+document.demineur.case8.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case8.id="id"+jeu[casejoue];
+}
+
+if(casejoue==9) {
+document.demineur.case9.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case9.id="id"+jeu[casejoue];
+}
+
+if(casejoue==10) {
+document.demineur.case10.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case10.id="id"+jeu[casejoue];
+}
+
+if(casejoue==11) {
+document.demineur.case11.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case11.id="id"+jeu[casejoue];
+}
+
+if(casejoue==12) {
+document.demineur.case12.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case12.id="id"+jeu[casejoue];
+}
+
+if(casejoue==13) {
+document.demineur.case13.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case13.id="id"+jeu[casejoue];
+}
+
+if(casejoue==14) {
+document.demineur.case14.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case14.id="id"+jeu[casejoue];
+}
+
+if(casejoue==15) {
+document.demineur.case15.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case15.id="id"+jeu[casejoue];
+}
+
+if(casejoue==16) {
+document.demineur.case16.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case16.id="id"+jeu[casejoue];
+}
+
+if(casejoue==17) {
+document.demineur.case17.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case17.id="id"+jeu[casejoue];
+}
+
+if(casejoue==18) {
+document.demineur.case18.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case18.id="id"+jeu[casejoue];
+}
+
+if(casejoue==19) {
+document.demineur.case19.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case19.id="id"+jeu[casejoue];
+}
+
+if(casejoue==20) {
+document.demineur.case20.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case20.id="id"+jeu[casejoue];
+}
+
+if(casejoue==21) {
+document.demineur.case21.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case21.id="id"+jeu[casejoue];
+}
+
+if(casejoue==22) {
+document.demineur.case22.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case22.id="id"+jeu[casejoue];
+}
+
+if(casejoue==23) {
+document.demineur.case23.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case23.id="id"+jeu[casejoue];
+}
+
+if(casejoue==24) {
+document.demineur.case24.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case24.id="id"+jeu[casejoue];
+}
+
+if(casejoue==25) {
+document.demineur.case25.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case25.id="id"+jeu[casejoue];
+}
+
+if(casejoue==26) {
+document.demineur.case26.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case26.id="id"+jeu[casejoue];
+}
+
+if(casejoue==27) {
+document.demineur.case27.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case27.id="id"+jeu[casejoue];
+}
+
+if(casejoue==28) {
+document.demineur.case28.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case28.id="id"+jeu[casejoue];
+}
+
+if(casejoue==29) {
+document.demineur.case29.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case29.id="id"+jeu[casejoue];
+}
+
+if(casejoue==30) {
+document.demineur.case30.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case30.id="id"+jeu[casejoue];
+}
+
+if(casejoue==31) {
+document.demineur.case31.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case31.id="id"+jeu[casejoue];
+}
+
+if(casejoue==32) {
+document.demineur.case32.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case32.id="id"+jeu[casejoue];
+}
+
+if(casejoue==33) {
+document.demineur.case33.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case33.id="id"+jeu[casejoue];
+}
+
+if(casejoue==34) {
+document.demineur.case34.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case34.id="id"+jeu[casejoue];
+}
+
+if(casejoue==35) {
+document.demineur.case35.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case35.id="id"+jeu[casejoue];
+}
+
+if(casejoue==36) {
+document.demineur.case36.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case36.id="id"+jeu[casejoue];
+}
+
+if(casejoue==37) {
+document.demineur.case37.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case37.id="id"+jeu[casejoue];
+}
+
+if(casejoue==38) {
+document.demineur.case38.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case38.id="id"+jeu[casejoue];
+}
+
+if(casejoue==39) {
+document.demineur.case39.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case39.id="id"+jeu[casejoue];
+}
+
+if(casejoue==40) {
+document.demineur.case40.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case40.id="id"+jeu[casejoue];
+}
+
+if(casejoue==41) {
+document.demineur.case41.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case41.id="id"+jeu[casejoue];
+}
+
+if(casejoue==42) {
+document.demineur.case42.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case42.id="id"+jeu[casejoue];
+}
+
+if(casejoue==43) {
+document.demineur.case43.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case43.id="id"+jeu[casejoue];
+}
+
+if(casejoue==44) {
+document.demineur.case44.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case44.id="id"+jeu[casejoue];
+}
+
+if(casejoue==45) {
+document.demineur.case45.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case45.id="id"+jeu[casejoue];
+}
+
+if(casejoue==46) {
+document.demineur.case46.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case46.id="id"+jeu[casejoue];
+}
+
+if(casejoue==47) {
+document.demineur.case47.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case47.id="id"+jeu[casejoue];
+}
+
+if(casejoue==48) {
+document.demineur.case48.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case48.id="id"+jeu[casejoue];
+}
+
+if(casejoue==49) {
+document.demineur.case49.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case49.id="id"+jeu[casejoue];
+}
+
+if(casejoue==50) {
+document.demineur.case50.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case50.id="id"+jeu[casejoue];
+}
+
+if(casejoue==51) {
+document.demineur.case51.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case51.id="id"+jeu[casejoue];
+}
+
+if(casejoue==52) {
+document.demineur.case52.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case52.id="id"+jeu[casejoue];
+}
+
+if(casejoue==53) {
+document.demineur.case53.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case53.id="id"+jeu[casejoue];
+}
+
+if(casejoue==54) {
+document.demineur.case54.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case54.id="id"+jeu[casejoue];
+}
+
+if(casejoue==55) {
+document.demineur.case55.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case55.id="id"+jeu[casejoue];
+}
+
+if(casejoue==56) {
+document.demineur.case56.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case56.id="id"+jeu[casejoue];
+}
+
+if(casejoue==57) {
+document.demineur.case57.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case57.id="id"+jeu[casejoue];
+}
+
+if(casejoue==58) {
+document.demineur.case58.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case58.id="id"+jeu[casejoue];
+}
+
+if(casejoue==59) {
+document.demineur.case59.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case59.id="id"+jeu[casejoue];
+}
+
+if(casejoue==60) {
+document.demineur.case60.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case60.id="id"+jeu[casejoue];
+}
+
+if(casejoue==61) {
+document.demineur.case61.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case61.id="id"+jeu[casejoue];
+}
+
+if(casejoue==62) {
+document.demineur.case62.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case62.id="id"+jeu[casejoue];
+}
+
+if(casejoue==63) {
+document.demineur.case63.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case63.id="id"+jeu[casejoue];
+}
+
+if(casejoue==64) {
+document.demineur.case64.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case64.id="id"+jeu[casejoue];
+}
+
+if(casejoue==65) {
+document.demineur.case65.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case65.id="id"+jeu[casejoue];
+}
+
+if(casejoue==66) {
+document.demineur.case66.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case66.id="id"+jeu[casejoue];
+}
+
+if(casejoue==67) {
+document.demineur.case67.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case67.id="id"+jeu[casejoue];
+}
+
+if(casejoue==68) {
+document.demineur.case68.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case68.id="id"+jeu[casejoue];
+}
+
+if(casejoue==69) {
+document.demineur.case69.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case69.id="id"+jeu[casejoue];
+}
+
+if(casejoue==70) {
+document.demineur.case70.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case70.id="id"+jeu[casejoue];
+}
+
+if(casejoue==71) {
+document.demineur.case71.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case71.id="id"+jeu[casejoue];
+}
+
+if(casejoue==72) {
+document.demineur.case72.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case72.id="id"+jeu[casejoue];
+}
+
+if(casejoue==73) {
+document.demineur.case73.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case73.id="id"+jeu[casejoue];
+}
+
+if(casejoue==74) {
+document.demineur.case74.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case74.id="id"+jeu[casejoue];
+}
+
+if(casejoue==75) {
+document.demineur.case75.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case75.id="id"+jeu[casejoue];
+}
+
+if(casejoue==76) {
+document.demineur.case76.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case76.id="id"+jeu[casejoue];
+}
+
+if(casejoue==77) {
+document.demineur.case77.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case77.id="id"+jeu[casejoue];
+}
+
+if(casejoue==78) {
+document.demineur.case78.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case78.id="id"+jeu[casejoue];
+}
+
+if(casejoue==79) {
+document.demineur.case79.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case79.id="id"+jeu[casejoue];
+}
+
+if(casejoue==80) {
+document.demineur.case80.value=jeu[casejoue];
+if(jeu[casejoue]!="#") document.demineur.case80.id="id"+jeu[casejoue];
+}
+
+}
+function finperdu() {
+alert("Perdu !\nVous êtes tombé sur une bombe.");
+top.document.title="Demineur - Perdu !";
+for(var i=0;i!=81;i++) affichechoix(i);
+}
+function trouvcasesutil() {
+var casesjouees=new Array();
+casesjouees[0]=document.demineur.case0.value;
+casesjouees[1]=document.demineur.case1.value;
+casesjouees[2]=document.demineur.case2.value;
+casesjouees[3]=document.demineur.case3.value;
+casesjouees[4]=document.demineur.case4.value;
+casesjouees[5]=document.demineur.case5.value;
+casesjouees[6]=document.demineur.case6.value;
+casesjouees[7]=document.demineur.case7.value;
+casesjouees[8]=document.demineur.case8.value;
+casesjouees[9]=document.demineur.case9.value;
+casesjouees[10]=document.demineur.case10.value;
+casesjouees[11]=document.demineur.case11.value;
+casesjouees[12]=document.demineur.case12.value;
+casesjouees[13]=document.demineur.case13.value;
+casesjouees[14]=document.demineur.case14.value;
+casesjouees[15]=document.demineur.case15.value;
+casesjouees[16]=document.demineur.case16.value;
+casesjouees[17]=document.demineur.case17.value;
+casesjouees[18]=document.demineur.case18.value;
+casesjouees[19]=document.demineur.case19.value;
+casesjouees[20]=document.demineur.case20.value;
+casesjouees[21]=document.demineur.case21.value;
+casesjouees[22]=document.demineur.case22.value;
+casesjouees[23]=document.demineur.case23.value;
+casesjouees[24]=document.demineur.case24.value;
+casesjouees[25]=document.demineur.case25.value;
+casesjouees[26]=document.demineur.case26.value;
+casesjouees[27]=document.demineur.case27.value;
+casesjouees[28]=document.demineur.case28.value;
+casesjouees[29]=document.demineur.case29.value;
+casesjouees[30]=document.demineur.case30.value;
+casesjouees[31]=document.demineur.case31.value;
+casesjouees[32]=document.demineur.case32.value;
+casesjouees[33]=document.demineur.case33.value;
+casesjouees[34]=document.demineur.case34.value;
+casesjouees[35]=document.demineur.case35.value;
+casesjouees[36]=document.demineur.case36.value;
+casesjouees[37]=document.demineur.case37.value;
+casesjouees[38]=document.demineur.case38.value;
+casesjouees[39]=document.demineur.case39.value;
+casesjouees[40]=document.demineur.case40.value;
+casesjouees[41]=document.demineur.case41.value;
+casesjouees[42]=document.demineur.case42.value;
+casesjouees[43]=document.demineur.case43.value;
+casesjouees[44]=document.demineur.case44.value;
+casesjouees[45]=document.demineur.case45.value;
+casesjouees[46]=document.demineur.case46.value;
+casesjouees[47]=document.demineur.case47.value;
+casesjouees[48]=document.demineur.case48.value;
+casesjouees[49]=document.demineur.case49.value;
+casesjouees[50]=document.demineur.case50.value;
+casesjouees[51]=document.demineur.case51.value;
+casesjouees[52]=document.demineur.case52.value;
+casesjouees[53]=document.demineur.case53.value;
+casesjouees[54]=document.demineur.case54.value;
+casesjouees[55]=document.demineur.case55.value;
+casesjouees[56]=document.demineur.case56.value;
+casesjouees[57]=document.demineur.case57.value;
+casesjouees[58]=document.demineur.case58.value;
+casesjouees[59]=document.demineur.case59.value;
+casesjouees[60]=document.demineur.case60.value;
+casesjouees[61]=document.demineur.case61.value;
+casesjouees[62]=document.demineur.case62.value;
+casesjouees[63]=document.demineur.case63.value;
+casesjouees[64]=document.demineur.case64.value;
+casesjouees[65]=document.demineur.case65.value;
+casesjouees[66]=document.demineur.case66.value;
+casesjouees[67]=document.demineur.case67.value;
+casesjouees[68]=document.demineur.case68.value;
+casesjouees[69]=document.demineur.case69.value;
+casesjouees[70]=document.demineur.case70.value;
+casesjouees[71]=document.demineur.case71.value;
+casesjouees[72]=document.demineur.case72.value;
+casesjouees[73]=document.demineur.case73.value;
+casesjouees[74]=document.demineur.case74.value;
+casesjouees[75]=document.demineur.case75.value;
+casesjouees[76]=document.demineur.case76.value;
+casesjouees[77]=document.demineur.case77.value;
+casesjouees[78]=document.demineur.case78.value;
+casesjouees[79]=document.demineur.case79.value;
+casesjouees[80]=document.demineur.case80.value;
+casesutil=0;
+for(var i=0;i!=81;i++) if(casesjouees[i]!=" ") casesutil++;
+}
+function jouer(casejoue) {
+affichechoix(casejoue);
+trouvcasesutil();
+document.demineur.caserest.value=81-casesutil;
+if(casesutil==81-nbbombes) {alert("Bien joué !\nVous avez gagné !");top.document.title="Demineur - Gagné !";}
+if(jeu[casejoue]=="#") finperdu();
+}
+function newgame() {
+document.demineur.case0.value=" ";
+document.demineur.case1.value=" ";
+document.demineur.case2.value=" ";
+document.demineur.case3.value=" ";
+document.demineur.case4.value=" ";
+document.demineur.case5.value=" ";
+document.demineur.case6.value=" ";
+document.demineur.case7.value=" ";
+document.demineur.case8.value=" ";
+document.demineur.case9.value=" ";
+document.demineur.case10.value=" ";
+document.demineur.case11.value=" ";
+document.demineur.case12.value=" ";
+document.demineur.case13.value=" ";
+document.demineur.case14.value=" ";
+document.demineur.case15.value=" ";
+document.demineur.case16.value=" ";
+document.demineur.case17.value=" ";
+document.demineur.case18.value=" ";
+document.demineur.case19.value=" ";
+document.demineur.case20.value=" ";
+document.demineur.case21.value=" ";
+document.demineur.case22.value=" ";
+document.demineur.case23.value=" ";
+document.demineur.case24.value=" ";
+document.demineur.case25.value=" ";
+document.demineur.case26.value=" ";
+document.demineur.case27.value=" ";
+document.demineur.case28.value=" ";
+document.demineur.case29.value=" ";
+document.demineur.case30.value=" ";
+document.demineur.case31.value=" ";
+document.demineur.case32.value=" ";
+document.demineur.case33.value=" ";
+document.demineur.case34.value=" ";
+document.demineur.case35.value=" ";
+document.demineur.case36.value=" ";
+document.demineur.case37.value=" ";
+document.demineur.case38.value=" ";
+document.demineur.case39.value=" ";
+document.demineur.case40.value=" ";
+document.demineur.case41.value=" ";
+document.demineur.case42.value=" ";
+document.demineur.case43.value=" ";
+document.demineur.case44.value=" ";
+document.demineur.case45.value=" ";
+document.demineur.case46.value=" ";
+document.demineur.case47.value=" ";
+document.demineur.case48.value=" ";
+document.demineur.case49.value=" ";
+document.demineur.case50.value=" ";
+document.demineur.case51.value=" ";
+document.demineur.case52.value=" ";
+document.demineur.case53.value=" ";
+document.demineur.case54.value=" ";
+document.demineur.case55.value=" ";
+document.demineur.case56.value=" ";
+document.demineur.case57.value=" ";
+document.demineur.case58.value=" ";
+document.demineur.case59.value=" ";
+document.demineur.case60.value=" ";
+document.demineur.case61.value=" ";
+document.demineur.case62.value=" ";
+document.demineur.case63.value=" ";
+document.demineur.case64.value=" ";
+document.demineur.case65.value=" ";
+document.demineur.case66.value=" ";
+document.demineur.case67.value=" ";
+document.demineur.case68.value=" ";
+document.demineur.case69.value=" ";
+document.demineur.case70.value=" ";
+document.demineur.case71.value=" ";
+document.demineur.case72.value=" ";
+document.demineur.case73.value=" ";
+document.demineur.case74.value=" ";
+document.demineur.case75.value=" ";
+document.demineur.case76.value=" ";
+document.demineur.case77.value=" ";
+document.demineur.case78.value=" ";
+document.demineur.case79.value=" ";
+document.demineur.case80.value=" ";
+
+document.demineur.case0.id="rien";
+document.demineur.case1.id="rien";
+document.demineur.case2.id="rien";
+document.demineur.case3.id="rien";
+document.demineur.case4.id="rien";
+document.demineur.case5.id="rien";
+document.demineur.case6.id="rien";
+document.demineur.case7.id="rien";
+document.demineur.case8.id="rien";
+document.demineur.case9.id="rien";
+document.demineur.case10.id="rien";
+document.demineur.case11.id="rien";
+document.demineur.case12.id="rien";
+document.demineur.case13.id="rien";
+document.demineur.case14.id="rien";
+document.demineur.case15.id="rien";
+document.demineur.case16.id="rien";
+document.demineur.case17.id="rien";
+document.demineur.case18.id="rien";
+document.demineur.case19.id="rien";
+document.demineur.case20.id="rien";
+document.demineur.case21.id="rien";
+document.demineur.case22.id="rien";
+document.demineur.case23.id="rien";
+document.demineur.case24.id="rien";
+document.demineur.case25.id="rien";
+document.demineur.case26.id="rien";
+document.demineur.case27.id="rien";
+document.demineur.case28.id="rien";
+document.demineur.case29.id="rien";
+document.demineur.case30.id="rien";
+document.demineur.case31.id="rien";
+document.demineur.case32.id="rien";
+document.demineur.case33.id="rien";
+document.demineur.case34.id="rien";
+document.demineur.case35.id="rien";
+document.demineur.case36.id="rien";
+document.demineur.case37.id="rien";
+document.demineur.case38.id="rien";
+document.demineur.case39.id="rien";
+document.demineur.case40.id="rien";
+document.demineur.case41.id="rien";
+document.demineur.case42.id="rien";
+document.demineur.case43.id="rien";
+document.demineur.case44.id="rien";
+document.demineur.case45.id="rien";
+document.demineur.case46.id="rien";
+document.demineur.case47.id="rien";
+document.demineur.case48.id="rien";
+document.demineur.case49.id="rien";
+document.demineur.case50.id="rien";
+document.demineur.case51.id="rien";
+document.demineur.case52.id="rien";
+document.demineur.case53.id="rien";
+document.demineur.case54.id="rien";
+document.demineur.case55.id="rien";
+document.demineur.case56.id="rien";
+document.demineur.case57.id="rien";
+document.demineur.case58.id="rien";
+document.demineur.case59.id="rien";
+document.demineur.case60.id="rien";
+document.demineur.case61.id="rien";
+document.demineur.case62.id="rien";
+document.demineur.case63.id="rien";
+document.demineur.case64.id="rien";
+document.demineur.case65.id="rien";
+document.demineur.case66.id="rien";
+document.demineur.case67.id="rien";
+document.demineur.case68.id="rien";
+document.demineur.case69.id="rien";
+document.demineur.case70.id="rien";
+document.demineur.case71.id="rien";
+document.demineur.case72.id="rien";
+document.demineur.case73.id="rien";
+document.demineur.case74.id="rien";
+document.demineur.case75.id="rien";
+document.demineur.case76.id="rien";
+document.demineur.case77.id="rien";
+document.demineur.case78.id="rien";
+document.demineur.case79.id="rien";
+document.demineur.case80.id="rien";
+debut();
+top.document.title="Demineur";
+casesutil=0;
+}
+function bonjour() {
+alert("Bienvenue au jeu !                                                                                                                                                          Le but est simple, Reflechit au placement des bombes, Affiche des nombres et fait le meilleur score !                                                                           Surtout amuse toi Bien. \"Demineur\"");
+window.status="© Leandre Kanmegne - 2016";
+newgame();
+}
+function aurevoir() {
+alert("Au revoir et à bientôt\n\n© Leandre Kanmegne - 2016");
+}
+//-->
+</script>
+<style type="text/css">
+#new{cursor:move;color:#CC0000;background-color:#FFFFFF}
+#new:hover{cursor:move;color:#6600FF;background-color:#FFFFCC}
+#nom{color:#000000;background-color:#FFFFFF;font-weight:bold;font-size:24px}
+#nom:hover{color:#FFFFFF;background-color:#000000;font-weight:normal}
+#rien{font-weight:bold; font-size:large}
+#id0{color:#66CCFF;font-weight:bold; font-size:large}
+#id1{color:#66CC99;font-weight:bold; font-size:large}
+#id2{color:#FFCC99;font-weight:bold; font-size:large}
+#id3{color:#FFCC66;font-weight:bold; font-size:large}
+#id4{color:#FF9966;font-weight:bold; font-size:large}
+#id5{color:#FF9933;font-weight:bold; font-size:large}
+#id6{color:#FF6633;font-weight:bold; font-size:large}
+#id7{color:#CC3366;font-weight:bold; font-size:large}
+#id8{color:#9900CC;font-weight:bold; font-size:large}
+.Style3 {font-size: 12px}
+.Style4 {color: #CC0000}
+</style>
+</head>
+<body onLoad="bonjour()">
+<div align="center">
+<a href="#" id="nom">>> DEMINEUR <<</a>
+  <form name="demineur" method="post" action="">
+    <table width="265" height="380" border="4" cellspacing="2">
+      <tr>
+        <td><input name="case0" type="button" value=" " onClick="jouer('0')"></td>
+        <td><input name="case1" type="button" id="case12" value=" " onClick="jouer('1')"></td>
+        <td><input name="case2" type="button" id="case23" value=" " onClick="jouer('2')"></td>
+        <td><input name="case3" type="button" value=" " onClick="jouer('3')"></td>
+        <td><input name="case4" type="button" value=" " onClick="jouer('4')"></td>
+        <td><input name="case5" type="button" value=" " onClick="jouer('5')"></td>
+        <td><input name="case6" type="button" value=" " onClick="jouer('6')"></td>
+        <td><input name="case7" type="button" value=" " onClick="jouer('7')"></td>
+        <td><input name="case8" type="button" value=" " onClick="jouer('8')"></td>
+      </tr>
+      <tr>
+        <td><input name="case9" type="button" value=" " onClick="jouer('9')"></td>
+        <td><input name="case10" type="button" value=" " onClick="jouer('10')"></td>
+        <td><input name="case11" type="button" value=" " onClick="jouer('11')"></td>
+        <td><input name="case12" type="button" value=" " onClick="jouer('12')"></td>
+        <td><input name="case13" type="button" value=" " onClick="jouer('13')"></td>
+        <td><input name="case14" type="button" value=" " onClick="jouer('14')"></td>
+        <td><input name="case15" type="button" value=" " onClick="jouer('15')"></td>
+        <td><input name="case16" type="button" value=" " onClick="jouer('16')"></td>
+        <td><input name="case17" type="button" value=" " onClick="jouer('17')"></td>
+      </tr>
+      <tr>
+        <td><input name="case18" type="button" value=" " onClick="jouer('18')"></td>
+        <td><input name="case19" type="button" value=" " onClick="jouer('19')"></td>
+        <td><input name="case20" type="button" value=" " onClick="jouer('20')"></td>
+        <td><input name="case21" type="button" value=" " onClick="jouer('21')"></td>
+        <td><input name="case22" type="button" value=" " onClick="jouer('22')"></td>
+        <td><input name="case23" type="button" value=" " onClick="jouer('23')"></td>
+        <td><input name="case24" type="button" value=" " onClick="jouer('24')"></td>
+        <td><input name="case25" type="button" value=" " onClick="jouer('25')"></td>
+        <td><input name="case26" type="button" value=" " onClick="jouer('26')"></td>
+      </tr>
+      <tr>
+        <td><input name="case27" type="button" value=" " onClick="jouer('27')"></td>
+        <td><input name="case28" type="button" value=" " onClick="jouer('28')"></td>
+        <td><input name="case29" type="button" value=" " onClick="jouer('29')"></td>
+        <td><input name="case30" type="button" value=" " onClick="jouer('30')"></td>
+        <td><input name="case31" type="button" value=" " onClick="jouer('31')"></td>
+        <td><input name="case32" type="button" value=" " onClick="jouer('32')"></td>
+        <td><input name="case33" type="button" value=" " onClick="jouer('33')"></td>
+        <td><input name="case34" type="button" value=" " onClick="jouer('34')"></td>
+        <td><input name="case35" type="button" value=" " onClick="jouer('35')"></td>
+      </tr>
+      <tr>
+        <td><input name="case36" type="button" value=" " onClick="jouer('36')"></td>
+        <td><input name="case37" type="button" value=" " onClick="jouer('37')"></td>
+        <td><input name="case38" type="button" value=" " onClick="jouer('38')"></td>
+        <td><input name="case39" type="button" value=" " onClick="jouer('39')"></td>
+        <td><input name="case40" type="button" value=" " onClick="jouer('40')"></td>
+        <td><input name="case41" type="button" value=" " onClick="jouer('41')"></td>
+        <td><input name="case42" type="button" value=" " onClick="jouer('42')"></td>
+        <td><input name="case43" type="button" value=" " onClick="jouer('43')"></td>
+        <td><input name="case44" type="button" value=" " onClick="jouer('44')"></td>
+      </tr>
+      <tr>
+        <td><input name="case45" type="button" value=" " onClick="jouer('45')"></td>
+        <td><input name="case46" type="button" value=" " onClick="jouer('46')"></td>
+        <td><input name="case47" type="button" value=" " onClick="jouer('47')"></td>
+        <td><input name="case48" type="button" value=" " onClick="jouer('48')"></td>
+        <td><input name="case49" type="button" value=" " onClick="jouer('49')"></td>
+        <td><input name="case50" type="button" value=" " onClick="jouer('50')"></td>
+        <td><input name="case51" type="button" value=" " onClick="jouer('51')"></td>
+        <td><input name="case52" type="button" value=" " onClick="jouer('52')"></td>
+        <td><input name="case53" type="button" value=" " onClick="jouer('53')"></td>
+      </tr>
+      <tr>
+        <td><input name="case54" type="button" value=" " onClick="jouer('54')"></td>
+        <td><input name="case55" type="button" value=" " onClick="jouer('55')"></td>
+        <td><input name="case56" type="button" value=" " onClick="jouer('56')"></td>
+        <td><input name="case57" type="button" value=" " onClick="jouer('57')"></td>
+        <td><input name="case58" type="button" value=" " onClick="jouer('58')"></td>
+        <td><input name="case59" type="button" value=" " onClick="jouer('59')"></td>
+        <td><input name="case60" type="button" value=" " onClick="jouer('60')"></td>
+        <td><input name="case61" type="button" value=" " onClick="jouer('61')"></td>
+        <td><input name="case62" type="button" value=" " onClick="jouer('62')"></td>
+      </tr>
+      <tr>
+        <td><input name="case63" type="button" value=" " onClick="jouer('63')"></td>
+        <td><input name="case64" type="button" value=" " onClick="jouer('64')"></td>
+        <td><input name="case65" type="button" value=" " onClick="jouer('65')"></td>
+        <td><input name="case66" type="button" value=" " onClick="jouer('66')"></td>
+        <td><input name="case67" type="button" value=" " onClick="jouer('67')"></td>
+        <td><input name="case68" type="button" value=" " onClick="jouer('68')"></td>
+        <td><input name="case69" type="button" value=" " onClick="jouer('69')"></td>
+        <td><input name="case70" type="button" value=" " onClick="jouer('70')"></td>
+        <td><input name="case71" type="button" value=" " onClick="jouer('71')"></td>
+      </tr>
+      <tr>
+        <td><input name="case72" type="button" value=" " onClick="jouer('72')"></td>
+        <td><input name="case73" type="button" value=" " onClick="jouer('73')"></td>
+        <td><input name="case74" type="button" value=" " onClick="jouer('74')"></td>
+        <td><input name="case75" type="button" value=" " onClick="jouer('75')"></td>
+        <td><input name="case76" type="button" value=" " onClick="jouer('76')"></td>
+        <td><input name="case77" type="button" value=" " onClick="jouer('77')"></td>
+        <td><input name="case78" type="button" value=" " onClick="jouer('78')"></td>
+        <td><input name="case79" type="button" value=" " onClick="jouer('79')"></td>
+        <td><input name="case80" type="button" value=" " onClick="jouer('80')"></td>
+      </tr>
+      <tr>
+        <td colspan="9"><input name="totalbombes" type="text" id="totalbombes" size="2" maxlength="2" disabled> 
+          Bombes, cases restantes : 
+        <input name="caserest" type="text" id="caserest" size="2" maxlength="2"></td>
+      </tr>
+    </table>
+    <a href="#" onClick="newgame()" id="new"><p>NOUVEAU JEU</p></a>
+    <p>Nombre de bombes : 
+      
+      <input name="selection" type="text" id="selection" value="10" size="2">
+      <span class="Style3">(max. 75) </span></p>
+    <p class="Style3 Style4">Pour valider le nombre de bombes : APPUYER sur "NOUVEAU JEU" </p>
+  </form>
+ 
+</div>
+</body>
+</html>

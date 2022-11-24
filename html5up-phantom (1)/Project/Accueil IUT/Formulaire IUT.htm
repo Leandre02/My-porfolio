@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Accueil</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+</head>
+<h2 align ="center"><u>INSCRIPTION</u></h2><br>
+<form name="f" action="sauvegarder.html" method="post" onSubmit="return verif()">
+<pre>
+<div align ="center">
+Nom et Prénom * : <input type="text" size="30" name="nom"> <br><br>
+MATRICULE* : <input type="text" size="10" name="MATRICULE"><br><br>
+Adresse e-mail * : <input type="text" size="30" name="email"> <br><br>
+Niveau :
+<input type="radio" name="r" checked value="1"> Secondaire <input type="radio" name="r" value="2"> Universitaire <input type="radio" name="r" value="3"> Autre<br><br>
+Modules de formation :<br>
+<SELECT name="list" multiple size="3" >
+<OPTION VALUE="Bureautique" >Bureautique</OPTION>
+<OPTION VALUE="SE et R�seaux info.">SE et Réseaux info.</OPTION>
+<OPTION VALUE="TIC">TIC</OPTION>
+<OPTION VALUE="Programmation">Programmation</OPTION>
+<OPTION VALUE="Comptabilite">Comptabilite</OPTION>
+<OPTION VALUE="Banque">Banque</OPTION>
+<OPTION VALUE="Soins infirmier">Soins infirmiers</OPTION>
+</SELECT><br><br></font></i>
+(*) Champs obligatoire
+<input type="submit" value="Envoyer"> <input type="reset" value="Annuler">
+</pre></div>
+</form>
+</body>
+</html>

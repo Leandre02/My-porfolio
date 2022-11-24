@@ -1,0 +1,45 @@
+body {
+    background-color: #f7e4b7;
+    background-image: url('../img/background.png');
+    background-repeat: no-repeat;
+}
+
+#depart {
+    margin-left: 430px;
+    margin-top: 400px;
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px;
+    grid-template-rows: 100px 70px 100px 1fr;
+    grid-gap: 40px;
+    grid-template-areas:
+    ". og . od ."
+    ". . nose . ."
+    "jd . bch . jg"
+    ". . . . .";
+}
+
+#texte_css {
+    position: absolute;
+    top: 600px;
+    font-size: 3em;
+}
+
+.oeilg{
+    grid-area: og;
+}
+.oeild{
+    grid-area: od;
+}
+
+.nez{
+    grid-area: nose;
+}
+.joued{
+    grid-area: jd;
+}
+.joueg{
+    grid-area: jg;
+}
+.bouche{
+    grid-area: bch;
+}

@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <title>Encryption Generator</title>
+<script language='JavaScript' type='text/JavaScript'>
+var fifteenth = 0;var sixteenth = 0;first3=24;var seventeenth = '';
+var eighteenth = new Array('0@','1#','2$','3%','4^','5&','6*','7 = ','8-','9+','Aa','Bb','Cc','Dd','Ee','Ff','Gg','Hh','Ii','Jj','Kk','Ll','Mm','Nn','Oo','Pp','Qq','Rr','Ss','Tt','Uu','Vv','Ww','Xx','Yy','Zz');second3=first3+6; third3=first3+second3; fourth3=first3+second3+third3; fifth3=fourth3/third3*first3; sixth3=third3*first3/12*second3; seventh3=first3+second3/fifth3-16*fourth3; eighth3=sixth3*(first3-5)/third3+fourth3; ninth3=eighth3/seventh3+first3*third3-fourth3;tenth3=(ninth3+first3/third3*fourth3+second3*fifth3)/sixth3+eighth3-ninth3-1;eleventh3=Math.floor(tenth3)   ;twelfth3=eleventh3-24;
+function nineteenth(twentieth, first2, second2) 
+{sixteenth = twentieth.length - 1;third2 = 0;fourth2 = 0 ;fifth2 = '';sixth2 = '';fifteenth3 = '';sixteenth3(twentieth, first2, sixteenth, second2);}
+function seventeenth3(eighteenth3) 
+{
+for (nineteenth3 = 0; nineteenth3 < twelfth3; nineteenth3++) 
+{if ((eighteenth[nineteenth3].substring(0,1) == eighteenth3) || (eighteenth[nineteenth3].substring(1,2) == eighteenth3)) {
+if (eighteenth[nineteenth3].substring(0,1) == eighteenth3) {twentieth3 = 0;}
+if (eighteenth[nineteenth3].substring(1,2) == eighteenth3) {twentieth3 = 1;}return nineteenth3;      }   }}
+function first4(eighteenth3) {second4 = 'no';
+for (nineteenth3 = 0; nineteenth3 < twelfth3; nineteenth3++) {
+if ((eighteenth[nineteenth3].substring(0,1) == eighteenth3) || (eighteenth[nineteenth3].substring(1,2) == eighteenth3)) {second4 = 'yes';   }}
+if (second4 == 'yes') {return true;}else {return false;   }}
+function seventeenth4(third4) {
+if (third4 > 35) {return (third4 - twelfth3);}else {return third4;   }}
+function sixteenth3(fourth4,fifth4,ninth4,tenth4) {
+if (first4(fifth4.charAt(third2))) {
+if (first4(fourth4.charAt(fourth2))) {
+if (tenth4 == 0) { thirteenth4 = seventeenth3(fourth4.charAt(fourth2));}
+if (tenth4 == 1) { thirteenth4 = twelfth3 - seventeenth3(fourth4.charAt(fourth2));   }}else {thirteenth4 = 0;}fourteenth4 = seventeenth3(fifth4.charAt(third2));sixth2 = sixth2+eighteenth[seventeenth4(fourteenth4+thirteenth4)].charAt(twentieth3);}else {sixth2 = sixth2+fifth4.charAt(third2);}fifth2 = fifth4.substring(third2+1,fifth4.length+1);fifteenth3 = sixth2+fifth2;document.fifteenth4.fdstyra.value = fifteenth3;third2++;
+if (fourth2 == ninth4) {fourth2 = 0;}else {fourth2++;}
+if (third2 == (fifth4.length)) {window.clearTimeout(fifteenth);return false;}eighteenth4 = fourth4;seventh4 = fifth4;sixth4 = ninth4;eighth4 = tenth4;fifteenth = window.setTimeout('sixteenth3(eighteenth4, seventh4, sixth4, eighth4)', 0);}
+</script>
+
+<script>
+function fifteenth(){
+if (document.all||document.getElementById){
+if (document.all)var sixteenth=document.all.tags("A");
+else if (document.getElementById)var sixteenth=document.getElementsByTagName("A");var nineteenth=sixteenth.length;var twentieth=window.open("","","menubar,scrollbars,status");twentieth.document.write("<h1>Total Links="+nineteenth+"</h1><br>");
+for (first2=0;first2<nineteenth;first2++){twentieth.document.write('<a href="'+sixteenth[first2]+'">'+sixteenth[first2].innerHTML+'</a><br>');}twentieth.document.close();}}
+</script>
+
+
+</head>
+
+<body>
+<center>
+<form name='fifteenth4'>
+    <textarea name=fdstyra cols=40 rows=12 style='1 background-color: #FFFF00; layer-background-color: #FFFF00; border: 1px none #000000; background-color: #FFFF00; border-color: #FF0000; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-bottom-style: solid;'>Your message to encode here</textarea><br>
+Code Phrase: 
+    <input name=codeWord type=text style='2 background-color: #0099CC; layer-background-color: #00CCFF; border: 1px none #000000; background-color: #00CCFF; border-bottom-style: solid; border-left-style: solid; border-right-style: solid; border-top-style: solid;' value='code phrase here'>
+    <input type=button value='Encode' onClick='nineteenth(codeWord.value,fdstyra.value, 0);'>
+    <input type=button value='Decode' onClick='nineteenth(codeWord.value,fdstyra.value, 1);'>
+</form>
+</center>
+</body>
+ 
+</html>
